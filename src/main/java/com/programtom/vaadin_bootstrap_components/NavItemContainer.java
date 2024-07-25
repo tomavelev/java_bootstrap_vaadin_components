@@ -8,8 +8,8 @@ import com.vaadin.flow.component.Tag;
 public class NavItemContainer extends Component implements HasComponents {
 
     public NavItemContainer(NavItem... items) {
-        for (int i = 0; i < items.length; i++) {
-            add(items[i]);
+        for (NavItem item : items) {
+            add(item);
         }
         setClassName("nav  justify-content-center");
     }

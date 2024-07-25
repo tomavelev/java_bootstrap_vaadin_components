@@ -6,11 +6,17 @@ import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.dom.Element;
 
+@SuppressWarnings("unused")
 @Tag("div")
 public class FloatingTextArea extends Component implements HasComponents {
 
-    private TextArea textArea;
+    private final TextArea textArea;
 
+    /**
+     * @param label - Floating label for the text area
+     * @param id - the id of the textarea field
+     * @param initialValue - initial content
+     */
     public FloatingTextArea(String label, String id, String initialValue) {
         textArea = new TextArea(id, label);
         textArea.setCustomValue(initialValue);

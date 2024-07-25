@@ -6,9 +6,7 @@ import com.vaadin.flow.component.html.Div;
 public class Container extends Div {
 
     public Container(Component... components) {
-        for (Component component : components) {
-            add(component);
-        }
+        add(components);
         setClassName("container");
     }
 }

@@ -9,6 +9,10 @@ public class NavItem extends Component implements HasComponents {
 
     protected Anchor anchor = new Anchor("", "");
 
+    /**
+     * Init Nav Item - with only label
+     * @param label - the label
+     */
     public NavItem(String label) {
         add(anchor);
         init(label, null, null);

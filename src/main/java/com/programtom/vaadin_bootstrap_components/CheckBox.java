@@ -2,9 +2,10 @@ package com.programtom.vaadin_bootstrap_components;
 
 import com.vaadin.flow.component.html.Div;
 
+@SuppressWarnings("unused")
 public class CheckBox extends Div {
 
-    private Input input;
+    private final Input input;
 
     public CheckBox(String id, String text, boolean initialValue) {
         setClassName("form-check");

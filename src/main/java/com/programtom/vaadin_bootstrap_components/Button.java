@@ -4,6 +4,7 @@ import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.ComponentEventListener;
 import com.vaadin.flow.component.Tag;
 
+@SuppressWarnings("unused")
 @Tag("button")
 public class Button extends com.vaadin.flow.component.button.Button {
 

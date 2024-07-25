@@ -4,6 +4,7 @@ import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.dom.Style;
 
+@SuppressWarnings("unused")
 public class HorizontalLayout extends Div {
 
     public HorizontalLayout(Component... components) {
@@ -15,11 +16,11 @@ public class HorizontalLayout extends Div {
     }
 
     public void addHorizontalComponents(Component... components) {
-
-        for (int i = 0; i < components.length; i++) {
-            components[i].getElement().getStyle().setDisplay(Style.Display.INLINE_BLOCK);
-            add(components[i]);
+        for (Component component : components) {
+            component.getElement().getStyle().setDisplay(Style.Display.INLINE_BLOCK);
         }
+        add(components);
+
     }
 
 }

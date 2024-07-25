@@ -5,9 +5,7 @@ import com.vaadin.flow.component.html.Div;
 
 public class Row extends Div {
     public Row(Component... components) {
-        for (Component component : components) {
-            add(component);
-        }
+        add(components);
         setClassName("row");
     }
 }
