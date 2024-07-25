@@ -7,6 +7,7 @@ import com.vaadin.flow.component.html.Anchor;
 
 import java.util.List;
 
+@SuppressWarnings("unused")
 @Tag("nav")
 public class Nav extends Component implements HasComponents {
     public Nav(List<Component> title, String titleHref, NavItemContainer navItemContainer) {
