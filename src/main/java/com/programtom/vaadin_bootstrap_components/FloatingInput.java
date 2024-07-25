@@ -3,6 +3,7 @@ package com.programtom.vaadin_bootstrap_components;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.dom.Element;
 
+@SuppressWarnings("unused")
 public class FloatingInput extends Div {
     private final Input input;
 

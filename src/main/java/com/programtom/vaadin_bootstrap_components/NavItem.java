@@ -4,6 +4,7 @@ import com.vaadin.flow.component.*;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Anchor;
 
+@SuppressWarnings("unused")
 @Tag("li")
 public class NavItem extends Component implements HasComponents {
 
@@ -11,6 +12,7 @@ public class NavItem extends Component implements HasComponents {
 
     /**
      * Init Nav Item - with only label
+     *
      * @param label - the label
      */
     public NavItem(String label) {
@@ -32,9 +34,7 @@ public class NavItem extends Component implements HasComponents {
         }
 
         if (clickListener != null) {
-            anchor.getElement().addEventListener("click", domEvent -> {
-                clickListener.onComponentEvent(null);
-            });
+            anchor.getElement().addEventListener("click", domEvent -> clickListener.onComponentEvent(null));
         }
     }
 

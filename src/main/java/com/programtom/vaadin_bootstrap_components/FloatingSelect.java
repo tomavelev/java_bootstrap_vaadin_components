@@ -7,6 +7,7 @@ import com.vaadin.flow.function.SerializableConsumer;
 
 import java.util.List;
 
+@SuppressWarnings("unused")
 @Tag("div")
 public class FloatingSelect extends Component implements HasComponents {
     private final Select select;
