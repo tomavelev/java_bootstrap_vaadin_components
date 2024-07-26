@@ -4,10 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a419bf0-6023-475d-9bdc-882594cb59cf" name="Changes" comment="Code Analysis fixes">
+    <list default="true" id="6a419bf0-6023-475d-9bdc-882594cb59cf" name="Changes" comment="Java Doc">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/BootstrapRootDiv.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/BootstrapRootDiv.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/Button.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/Button.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/ButtonType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/ButtonType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/CheckBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/CheckBox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/Column.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/Column.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/Container.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/Container.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/FloatingInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/FloatingInput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/FloatingSelect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/FloatingSelect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/FloatingTextArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/FloatingTextArea.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/Form.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/Form.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/HorizontalLayout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/HorizontalLayout.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/Input.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/Label.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/Label.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/Nav.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/Nav.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/NavItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/NavItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/NavItemContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/NavItemContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/Option.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/Option.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/Row.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/Row.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/Select.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/Select.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/TextArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/TextArea.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/VerticalLayout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/VerticalLayout.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +45,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 4
@@ -34,16 +58,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "show.migrate.to.gradle.popup": "false"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\progr\dev\newstart23\java_bootstrap_vaadin_components\src\main\java" />
@@ -98,12 +123,21 @@
       <option name="project" value="LOCAL" />
       <updated>1721917888435</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Code Analysis fixes">
+      <option name="closed" value="true" />
+      <created>1721917906603</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1721917906603</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="Code Analysis fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Code Analysis fixes" />
+    <MESSAGE value="Java Doc" />
+    <option name="LAST_COMMIT_MESSAGE" value="Java Doc" />
   </component>
 </project>

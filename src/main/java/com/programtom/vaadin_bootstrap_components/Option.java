@@ -3,10 +3,21 @@ package com.programtom.vaadin_bootstrap_components;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Tag;
 
-@SuppressWarnings("unused")
+@SuppressWarnings({"unused", "DanglingJavadoc"})
+/**
+ A custom UI component that represents an option in a select element.
 
+ @author Toma Velev
+ */
 @Tag("option")
 public class Option extends Component {
+    /**
+     * Initializes a new instance of Option with the given text, value and selected status.
+     *
+     * @param text     The text of the HTML option
+     * @param value    The value of the option (not displayed to the user)
+     * @param selected Whether the option is initially selected
+     */
     public Option(String text, String value, boolean selected) {
         getElement().setText(text);
         getElement().setAttribute("value", value);
@@ -15,23 +26,29 @@ public class Option extends Component {
         }
     }
 
+
     /**
-     * Empty Constructor
+     * Empty constructor that initializes an empty option.
      */
     public Option() {
         this("", "", false);
     }
 
     /**
-     * @param text The Text of the HTML Option
+     * Initializes a new instance of Option with the given text and default value and selected status.
+     *
+     * @param text The text of the HTML option
      */
     public Option(String text) {
         this(text, "", false);
     }
 
+
     /**
-     * @param text  - The Text of the HTML Option
-     * @param value - The Value of the Option (not displayed to the user)
+     * Initializes a new instance of Option with the given text and value, and default selected status.
+     *
+     * @param text  The text of the HTML option
+     * @param value The value of the option (not displayed to the user)
      */
     public Option(String text, String value) {
         this(text, value, false);

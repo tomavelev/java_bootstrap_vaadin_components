@@ -4,16 +4,24 @@ import com.vaadin.flow.component.*;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Anchor;
 
+/**
+ * A custom UI component that represents a navigation item.
+ *
+ * @author Toma Velev
+ */
 @SuppressWarnings("unused")
 @Tag("li")
 public class NavItem extends Component implements HasComponents {
 
+    /**
+     * Initializes an empty Nav Item.
+     */
     protected Anchor anchor = new Anchor("", "");
 
     /**
-     * Init Nav Item - with only label
+     * Initializes a Nav Item with only a label.
      *
-     * @param label - the label
+     * @param label the label of the nav item
      */
     public NavItem(String label) {
         add(anchor);
@@ -38,16 +46,35 @@ public class NavItem extends Component implements HasComponents {
         }
     }
 
+    /**
+     * Initializes a Nav Item with a label and href.
+     *
+     * @param label the label of the nav item
+     * @param href  the href attribute of the nav item
+     */
     public NavItem(String label, String href) {
         add(anchor);
         init(label, href, null);
     }
 
+    /**
+     * Initializes a Nav Item with a label and click listener.
+     *
+     * @param label         the label of the nav item
+     * @param clickListener the component event listener for the nav item
+     */
     public NavItem(String label, ComponentEventListener<ClickEvent<Button>> clickListener) {
         add(anchor);
         init(label, null, clickListener);
     }
 
+    /**
+     * Initializes a Nav Item with a label, href, and click listener.
+     *
+     * @param label         the label of the nav item
+     * @param href          the href attribute of the nav item
+     * @param clickListener the component event listener for the nav item
+     */
     public NavItem(String label, String href, ComponentEventListener<ClickEvent<Button>> clickListener) {
         add(anchor);
         init(label, href, clickListener);

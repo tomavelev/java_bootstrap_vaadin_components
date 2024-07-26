@@ -7,9 +7,21 @@ import com.vaadin.flow.component.html.Anchor;
 
 import java.util.List;
 
+/**
+ * A custom UI component that represents a navigation menu.
+ *
+ * @author Toma Velev
+ */
 @SuppressWarnings("unused")
 @Tag("nav")
 public class Nav extends Component implements HasComponents {
+    /**
+     * Constructs a new Nav instance with the given title, titleHref and navItemContainer.
+     *
+     * @param title            the title of the navigation
+     * @param titleHref        the href attribute of the title
+     * @param navItemContainer the container for the navigation items
+     */
     public Nav(List<Component> title, String titleHref, NavItemContainer navItemContainer) {
         setClassName("navbar shadow-sm");
 
@@ -18,6 +30,12 @@ public class Nav extends Component implements HasComponents {
         add(anchor, navItemContainer);
     }
 
+    /**
+     * Constructs a new Nav instance with the given title and titleHref.
+     *
+     * @param title     the title of the navigation
+     * @param titleHref the href attribute of the title
+     */
     public Nav(String title, String titleHref) {
         setClassName("navbar shadow-sm");
 
