@@ -1,6 +1,8 @@
 package com.programtom.vaadin_bootstrap_components;
 
-import com.vaadin.flow.component.*;
+import com.vaadin.flow.component.ClickEvent;
+import com.vaadin.flow.component.ComponentEventListener;
+import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Anchor;
 
@@ -10,13 +12,8 @@ import com.vaadin.flow.component.html.Anchor;
  * @author Toma Velev
  */
 @SuppressWarnings("unused")
-@Tag("li")
-public class NavItem extends Component implements HasComponents {
-
-    /**
-     * Initializes an empty Nav Item.
-     */
-    protected Anchor anchor = new Anchor("", "");
+@Tag("a")
+public class NavItem extends Anchor {
 
     /**
      * Initializes a Nav Item with only a label.
@@ -24,7 +21,6 @@ public class NavItem extends Component implements HasComponents {
      * @param label the label of the nav item
      */
     public NavItem(String label) {
-        add(anchor);
         init(label, null, null);
     }
 
@@ -32,17 +28,30 @@ public class NavItem extends Component implements HasComponents {
                       String href,
                       ComponentEventListener<ClickEvent<Button>> clickListener) {
 
-        setClassName("nav-item");
-        anchor.setClassName("nav-link");
-        anchor.setText(label);
+        setClassName("nav-link");
+        setText(label);
         if (href != null) {
-            anchor.setHref(href);
+            setHref(href);
         } else {
-            anchor.removeHref();
+            removeHref();
         }
 
         if (clickListener != null) {
-            anchor.getElement().addEventListener("click", domEvent -> clickListener.onComponentEvent(null));
+            getElement().addEventListener("click", domEvent -> {
+                clickListener.onComponentEvent(null);
+                String jsScript = """
+                        const parent = $0.parentNode;
+                        parent.childNodes.forEach(function(item) {
+                            if (item.nodeType === Node.ELEMENT_NODE && item !== $0) {
+                                item.classList.remove('active');
+                            }
+                        });
+                        if(!$0.classList.contains('active')) {
+                           $0.classList.add("active");
+                        }
+                        """;
+                getElement().executeJs(jsScript, getElement());
+            });
         }
     }
 
@@ -53,7 +62,6 @@ public class NavItem extends Component implements HasComponents {
      * @param href  the href attribute of the nav item
      */
     public NavItem(String label, String href) {
-        add(anchor);
         init(label, href, null);
     }
 
@@ -64,7 +72,6 @@ public class NavItem extends Component implements HasComponents {
      * @param clickListener the component event listener for the nav item
      */
     public NavItem(String label, ComponentEventListener<ClickEvent<Button>> clickListener) {
-        add(anchor);
         init(label, null, clickListener);
     }
 
@@ -76,7 +83,6 @@ public class NavItem extends Component implements HasComponents {
      * @param clickListener the component event listener for the nav item
      */
     public NavItem(String label, String href, ComponentEventListener<ClickEvent<Button>> clickListener) {
-        add(anchor);
         init(label, href, clickListener);
     }
 }

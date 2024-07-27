@@ -9,7 +9,7 @@ import com.vaadin.flow.component.Tag;
  *
  * @author Toma Velev
  */
-@Tag("ul")
+@Tag("div")
 public class NavItemContainer extends Component implements HasComponents {
     /**
      * Initializes a new instance of NavItemContainer with a variable number of NavItem components.
@@ -18,6 +18,9 @@ public class NavItemContainer extends Component implements HasComponents {
      */
     public NavItemContainer(NavItem... items) {
         add(items);
-        setClassName("nav justify-content-center");
+        setClassName("navbar-nav");
+
+        getElement().getStyle().set("--bs-nav-link-padding-x", "0.5rem");
+        getElement().getStyle().set("flex-direction","row");
     }
 }
