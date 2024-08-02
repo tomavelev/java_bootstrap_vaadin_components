@@ -11,6 +11,8 @@ public class Input extends com.vaadin.flow.component.html.Input {
      */
     public Input() {
         super();
+        setClassName("form-control");
+        setType(InputType.TEXT.getHTMLType());
     }
 
     /**
@@ -20,9 +22,9 @@ public class Input extends com.vaadin.flow.component.html.Input {
      * @param id          the input id
      * @param placeholder the input placeholder text
      */
-    public Input(String type, String id, String placeholder) {
+    public Input(InputType type, String id, String placeholder) {
         super();
-        setType(type);
+        setType(type.getHTMLType());
         setClassName("form-control");
         setPlaceholder(placeholder);
 

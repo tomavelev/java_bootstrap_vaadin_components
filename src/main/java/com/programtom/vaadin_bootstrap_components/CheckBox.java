@@ -26,7 +26,7 @@ public class CheckBox extends Div {
     public CheckBox(String id, String text, boolean initialValue) {
         setClassName("form-check");
 
-        input = new Input("checkbox", id, "");
+        input = new Input(InputType.CHECKBOX, id, "");
         input.setClassName("form-check-input");
         if (initialValue) {
             input.getElement().setAttribute("checked", "checked");
