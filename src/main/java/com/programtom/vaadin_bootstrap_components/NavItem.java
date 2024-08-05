@@ -29,29 +29,42 @@ public class NavItem extends Anchor {
                       ComponentEventListener<ClickEvent<Button>> clickListener) {
 
         setClassName("nav-link");
-        setText(label);
+        getElement().setText(label);
         if (href != null) {
-            setHref(href);
-        } else {
-            removeHref();
-        }
-
-        if (clickListener != null) {
-            getElement().addEventListener("click", domEvent -> {
-                clickListener.onComponentEvent(null);
-                String jsScript = """
-                        const parent = $0.parentNode;
-                        parent.childNodes.forEach(function(item) {
-                            if (item.nodeType === Node.ELEMENT_NODE && item !== $0) {
-                                item.classList.remove('active');
-                            }
-                        });
-                        if(!$0.classList.contains('active')) {
-                           $0.classList.add("active");
+            getElement().setAttribute("href", href);
+        } else if (clickListener != null) {
+            getElement().setAttribute("href", "#");
+            getElement().addEventListener("click",  domEvent -> clickListener.onComponentEvent(null));
+            getElement().executeJs("""
+                    $0.addEventListener('click', function(event) {
+                      event.preventDefault();
+                      const parent = $0.parentNode;
+                      parent.childNodes.forEach(function(item) {
+                        if (item.nodeType === Node.ELEMENT_NODE && item !== $0) {
+                            item.classList.remove('active');
                         }
-                        """;
-                getElement().executeJs(jsScript, getElement());
-            });
+                      });
+                      if(!$0.classList.contains('active')) {
+                      $0.classList.add("active");
+                      }
+                    });
+                    """,getElement());
+//            getElement().addEventListener("click", domEvent -> {
+//                clickListener.onComponentEvent(null);
+//
+//                String jsScript = """
+//                        const parent = $0.parentNode;
+//                        parent.childNodes.forEach(function(item) {
+//                            if (item.nodeType === Node.ELEMENT_NODE && item !== $0) {
+//                                item.classList.remove('active');
+//                            }
+//                        });
+//                        if(!$0.classList.contains('active')) {
+//                           $0.classList.add("active");
+//                        }
+//                        """;
+//                getElement().executeJs(jsScript, getElement());
+//            });
         }
     }
 

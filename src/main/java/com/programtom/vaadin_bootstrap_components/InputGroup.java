@@ -19,6 +19,7 @@ import com.vaadin.flow.component.html.Div;
  container.add(group);
 </pre>
  */
+@SuppressWarnings("unused")
 public class InputGroup extends Div {
 
     /**
