@@ -24,11 +24,10 @@ public class FloatingInput extends Div {
      * @param error        an optional error message to display below the input field
      * @param initialValue the initial value of the input field
      */
-    public FloatingInput(String id, String type, String label, String error, String initialValue) {
-        input = new Input();
-        input.setId(id);
-        input.setPlaceholder(label);
+    public FloatingInput(String id, InputType type, String label, String error, String initialValue) {
+        input = new Input(label, type);
         input.setValue(initialValue);
+        input.setType(type.getHTMLType());
 
         setClassName("mt-2 mb-4 form-floating");
         add(input);
@@ -37,6 +36,15 @@ public class FloatingInput extends Div {
         if (!error.isEmpty()) {
             addError(error);
         }
+    }
+
+    /**
+     * Set the autocomplete input property
+     *
+     * @param type - the autocomplete value
+     */
+    public void setAutoComplete(AutoCompleteFieldType type) {
+        input.setAutocomplete(type);
     }
 
     /**
