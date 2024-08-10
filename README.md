@@ -105,11 +105,10 @@ container.
 add(layout);
 ```
 
-### Create responsive Grid
-
+### Creating responsive Grid
 ```
 
-//responsive grid requires contaienr and row
+//A responsive grid requires a container and a row
 add(new Container(new Row(..............)));
 
 //Example 1 - Create a UI where you have two items on left and side and a space between them for bigger screens
