@@ -12,6 +12,7 @@ Vaadin Components that use Bootstrap CSS as a basis.
             <version>1.0-SNAPSHOT</version>
         </dependency>
 
+4) Let your root component (one that has @Route) extend <a href="https://github.com/tomavelev/bootstrap_vaadin_components/blob/master/com/programtom/vaadin_bootstrap_kotlin_components/BootstrapRootDiv.kt">BootstrapRootDiv</a>
 ### Examples
 
 Here are some sample usage examples for the `Select`, `TextArea`, and `VerticalLayout` components:
