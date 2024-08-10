@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a419bf0-6023-475d-9bdc-882594cb59cf" name="Changes" comment="rework the nav to allow active menu item">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/InputGroup.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/InputType.java" afterDir="false" />
+    <list default="true" id="6a419bf0-6023-475d-9bdc-882594cb59cf" name="Changes" comment="autocomplete field integrated to the input">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/ResponsiveSize.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/CheckBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/CheckBox.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/HorizontalLayout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/HorizontalLayout.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/Input.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/Column.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/Column.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/FloatingInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/programtom/vaadin_bootstrap_components/FloatingInput.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +20,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -140,7 +140,31 @@
       <option name="project" value="LOCAL" />
       <updated>1722071513629</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Introduce input group, input type, horizontal layout modes">
+      <option name="closed" value="true" />
+      <created>1722591984872</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1722591984872</updated>
+    </task>
+    <task id="LOCAL-00009" summary="rework anchor to be clickable">
+      <option name="closed" value="true" />
+      <created>1722875533301</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1722875533301</updated>
+    </task>
+    <task id="LOCAL-00010" summary="autocomplete field integrated to the input">
+      <option name="closed" value="true" />
+      <created>1722949702555</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1722949702555</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -149,6 +173,9 @@
     <MESSAGE value="Java Doc" />
     <MESSAGE value="Progress on README.md" />
     <MESSAGE value="rework the nav to allow active menu item" />
-    <option name="LAST_COMMIT_MESSAGE" value="rework the nav to allow active menu item" />
+    <MESSAGE value="Introduce input group, input type, horizontal layout modes" />
+    <MESSAGE value="rework anchor to be clickable" />
+    <MESSAGE value="autocomplete field integrated to the input" />
+    <option name="LAST_COMMIT_MESSAGE" value="autocomplete field integrated to the input" />
   </component>
 </project>

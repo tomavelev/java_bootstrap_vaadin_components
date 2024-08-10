@@ -67,6 +67,15 @@ public class FloatingInput extends Div {
     }
 
     /**
+     * Sets the value of the input field
+     *
+     * @param value set new value to the input
+     */
+    public void setValue(String value) {
+        input.setValue(value);
+    }
+
+    /**
      * Gets the current value of the underlying Input component.
      *
      * @return the current value of the input field
