@@ -12,12 +12,40 @@ Vaadin Components that use Bootstrap CSS as a basis.
             <version>1.0-SNAPSHOT</version>
         </dependency>
 
-4) Let your root component (one that has @Route) extend <a href="https://github.com/tomavelev/bootstrap_vaadin_components/blob/master/com/programtom/vaadin_bootstrap_kotlin_components/BootstrapRootDiv.kt">BootstrapRootDiv</a>
-### Examples
+4) Let your root component (one that has @Route)
+   extend <a href="https://github.com/tomavelev/bootstrap_vaadin_components/blob/master/com/programtom/vaadin_bootstrap_kotlin_components/BootstrapRootDiv.kt">
+   BootstrapRootDiv</a>
+
+## Examples
 
 Here are some sample usage examples for the `Select`, `TextArea`, and `VerticalLayout` components:
 
-**Select Component**
+### Input Fields
+
+As an individual influenced by Material Design, I've implemented FloatingInput, but you also have the power to use plain
+Input. It has exposed:
+
+- id
+- Input Type
+- AutoComplete Type
+- placeholder
+
+```
+//initialize floating input with floating label "Name"
+FloatingInput nameField = new FloatingInput("Name");
+
+nameField.setError("Required"); // Dispaly error to the user - after clicking save button 
+
+nameField.focus(); // request focus to the field
+
+nameField.setAutoComplete(AutoCompleteFieldType.BDAY);// set autocomplete type (from the long list of types - name, address, etc
+
+nameField.setValue("new Value");
+
+nameField.getValue();//get the value of the input field
+```
+
+### Select Component
 
 ```java
 // Create a list of options
@@ -41,7 +69,7 @@ container.
 add(select);
 ```
 
-**TextArea Component**
+### TextArea Component
 
 ```java
 // Create a text area with an initial value
@@ -106,7 +134,28 @@ container.
 add(layout);
 ```
 
+## Audio and Video Components
+
+Audios and Videos Could Be added to the UI with defaults:
+
+```
+verticalLayout.add(new Audio(src, BaseContent.Preload.none));
+
+Video video = new Video(src, BaseContent.Preload.auto);
+
+//set custom parameters
+video.setAutoplay(false);
+video.setLoop(false);
+video.setControls(true);
+video.setMuted(false);
+
+or video.setAutoplay(false).setLoop(false).setControls(true) /* ... */;
+
+verticalLayout.add(video);
+```
+
 ### Creating responsive Grid
+
 ```
 
 //A responsive grid requires a container and a row
@@ -125,10 +174,35 @@ add(new Container(new Row(..............)));
  .withSize(ResponsiveSize.small, 6)
  .withSize(ResponsiveSize.medium, 4),
 
+```
 
+## Navigation Component
+
+You could create a Navigation with:
+
+```
+        NavItem logoutButton = new NavItem("logout", buttonClickEvent -> {
+         //logout
+        });
+        NavItem menuItem1 = new NavItem("menuItem1", buttonClickEvent -> {
+          //menuItem1
+        });
+        NavItemContainer navContainer = new NavItemContainer(menuItem1, logoutButton);
+        
+        //Maybe I should make a component for brand icon
+        Image image = new Image("icons/icon.png", "icon");
+        image.setWidth("30px");
+        image.setHeight("30px");
+        image.getStyle().setMarginLeft("10px");
+        image.getStyle().setMarginRight("10px");
+        Nav navBar = new Nav(Arrays.asList(
+                image,
+                new Span("My Title")
+
+        ), "#", navContainer);
 ```
 
 TODOs
 
-- Better samples for all components
+- Better samples for remaining components
 - Live (Showcase) Demo

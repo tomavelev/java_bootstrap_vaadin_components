@@ -3,6 +3,7 @@ package com.programtom.vaadin_bootstrap_components;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.dom.Element;
 
+
 /**
  * A custom UI component that represents a floating input field.
  *
@@ -14,6 +15,15 @@ public class FloatingInput extends Div {
      * The underlying Input component.
      */
     private final Input input;
+
+    /**
+     * Constructs a new FloatingInput with the given label
+     *
+     * @param label the text displayed as a label above the input field
+     */
+    public FloatingInput(String label) {
+        this("", InputType.TEXT, label, "", "");
+    }
 
     /**
      * Constructs a new FloatingInput with the given ID, type, label, error message, and initial value.
@@ -101,5 +111,12 @@ public class FloatingInput extends Div {
         getElement().getChildren()
                 .filter(child -> child.getClassList().contains("invalid-feedback"))
                 .forEach(Element::removeFromParent);
+    }
+
+    /**
+     * Requests focus on the input element
+     */
+    public void focus() {
+        input.focus();
     }
 }
