@@ -59,6 +59,9 @@ public abstract class BaseContent extends Component implements HasComponents {
      */
     protected String ariaDescribedBy;
 
+    /**
+     * Empty Constructor
+     */
     public BaseContent() {
         sourceList = new ArrayList<>();
         src = "";
@@ -114,6 +117,7 @@ public abstract class BaseContent extends Component implements HasComponents {
      * Sets whether the content should start playing automatically when loaded.
      *
      * @param autoplay whether the content should start playing automatically
+     * @return this
      */
     public BaseContent setAutoplay(boolean autoplay) {
         this.autoplay = autoplay;
@@ -133,6 +137,7 @@ public abstract class BaseContent extends Component implements HasComponents {
      * Sets whether the content controls (play/pause, volume, etc.) should be displayed.
      *
      * @param controls whether the content controls should be displayed
+     * @return this
      */
     public BaseContent setControls(boolean controls) {
         this.controls = controls;
@@ -152,6 +157,7 @@ public abstract class BaseContent extends Component implements HasComponents {
      * Sets whether the content should loop indefinitely.
      *
      * @param loop whether the content should loop indefinitely
+     * @return this
      */
     public BaseContent setLoop(boolean loop) {
         this.loop = loop;
@@ -171,6 +177,7 @@ public abstract class BaseContent extends Component implements HasComponents {
      * Sets whether the content should start muted by default.
      *
      * @param muted whether the content should start muted
+     * @return this
      */
     public BaseContent setMuted(boolean muted) {
         this.muted = muted;

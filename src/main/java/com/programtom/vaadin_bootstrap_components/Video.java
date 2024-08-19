@@ -60,6 +60,7 @@ public class Video extends BaseContent {
      * Sets the height of the video component to the specified value.
      *
      * @param height the new height of the video component
+     * @return this
      */
     public Video setHeight(String height) {
         this.height = height;
@@ -80,6 +81,7 @@ public class Video extends BaseContent {
      * Sets the width of the video component to the specified value.
      *
      * @param width the new width of the video component
+       @return this
      */
     public Video setWidth(String width) {
         this.width = width;
@@ -100,6 +102,7 @@ public class Video extends BaseContent {
      * Sets the object fit property of the video component to the specified value.
      *
      * @param objectFit the new object fit property
+     * @return this
      */
     public Video setObjectFit(ObjectFit objectFit) {
         this.objectFit = objectFit;
@@ -120,6 +123,7 @@ public class Video extends BaseContent {
      * Sets the track element for this video component to the specified value.
      *
      * @param track the new track element
+     * @return this
      */
     public Video setTrack(Track track) {
         this.track = track;
@@ -139,7 +143,26 @@ public class Video extends BaseContent {
      */
     public enum ObjectFit {
 
-        contain, cover, fill, scale, none;
+        /**
+         * tells the element to scale its content to fit the aspect ratio of the containing element while completely fitting within the containing element.
+         */
+        contain,
+        /**
+         * The replaced content is sized to maintain its aspect ratio while filling the element's entire content box. If the object's aspect ratio does not match the aspect ratio of its box, then the object will be clipped to fit.
+         */
+        cover,
+        /**
+         * The replaced content is sized to fill the element's content box. The entire object will completely fill the box. If the object's aspect ratio does not match the aspect ratio of its box, then the object will be stretched to fit.
+         */
+        fill,
+        /**
+         * The content is sized as if none or contain were specified, whichever would result in a smaller concrete object size.
+         */
+        scale,
+        /**
+         * The replaced content is not resized.
+         */
+        none;
 
         /**
          * @return the Bootstrap CSS class

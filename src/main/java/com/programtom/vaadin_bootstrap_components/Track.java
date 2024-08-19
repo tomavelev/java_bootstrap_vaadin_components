@@ -5,7 +5,7 @@ import com.vaadin.flow.component.Tag;
 
 
 /**
- * A Vaadin component for a <track> element.
+ * A Vaadin component for a &lt;track&gt; element.
  */
 @SuppressWarnings("unused")
 @Tag("source")
@@ -34,6 +34,7 @@ public class Track extends Component {
      * Sets whether this is a default track.
      *
      * @param default_ whether this is a default track
+     * @return this
      */
     public Track setDefault(boolean default_) {
         getElement().setAttribute("default", Boolean.toString(default_));
@@ -41,9 +42,10 @@ public class Track extends Component {
     }
 
     /**
-     * Sets the label for this <track> element
+     * Sets the label for this  &lt;track&gt; element
      *
      * @param label the source language code for this track
+     * @return this
      */
     public Track setLabel(String label) {
         getElement().setAttribute("label", label);
@@ -51,9 +53,10 @@ public class Track extends Component {
     }
 
     /**
-     * Sets the srclang for this <track> element (e.g. "en").
+     * Sets the srclang for this track element (e.g. "en").
      *
      * @param srclang the source language code for this track
+     * @return this
      */
     public Track setSrcLang(String srclang) {
         getElement().setAttribute("srclang", srclang);

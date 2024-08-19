@@ -13,6 +13,10 @@ import java.util.List;
  */
 @SuppressWarnings("unused")
 public class HorizontalLayout extends Div {
+
+    /**
+     * The Display Mode of the Horizontal Layout (GRID, FLEX, BLOCK)
+     */
     private final DisplayMode displayMode;
 
     /**
@@ -51,7 +55,7 @@ public class HorizontalLayout extends Div {
      * Adds the given components to this layout, horizontally aligned.
      *
      * @param components the components to add
-     * @param flex the flex amount to set
+     * @param flex       the flex amount to set
      */
     public void addHorizontalComponents(List<Component> components, List<Integer> flex) {
         assert displayMode == DisplayMode.FLEX;

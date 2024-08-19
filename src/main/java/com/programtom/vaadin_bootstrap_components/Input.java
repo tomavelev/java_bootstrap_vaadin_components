@@ -111,4 +111,12 @@ public class Input extends com.vaadin.flow.component.html.Input {
             getElement().setAttribute("id", id);
         }
     }
+
+    public void setChecked(boolean initialValue) {
+        if (initialValue) {
+            getElement().setAttribute("checked", "");
+        } else {
+            getElement().removeAttribute("checked");
+        }
+    }
 }

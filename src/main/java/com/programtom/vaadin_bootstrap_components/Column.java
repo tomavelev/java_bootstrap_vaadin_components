@@ -10,7 +10,6 @@ import com.vaadin.flow.component.html.Div;
  * @author Toma Velev
  * @version 1.0
  */
-
 public class Column extends Div {
     /**
      * Constructor for creating a new Column with the components. You will need to add responsive CSS classes post-construct.

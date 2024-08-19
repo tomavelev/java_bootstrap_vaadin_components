@@ -6,23 +6,23 @@ package com.programtom.vaadin_bootstrap_components;
 public enum ResponsiveSize {
 
     /**
-     * This describes <576px screen size
+     * This describes &lt; 576px screen size
      */
     extraSmall,
     /**
-     * Indicates screen size between 576px <=> 768px
+     * Indicates screen size between 576px &lt; = &gt; 768px
      */
     small,
     /**
-     * Indicates screen size between 768px <=> 992px
+     * Indicates screen size between 768px &lt; = &gt; 992px
      */
     medium,
     /**
-     * Indicates screen size between 992px <=> 1200px
+     * Indicates screen size between 992px &lt; = &gt; 1200px
      */
     large,
     /**
-     * Indicates screen size between 1200px <=> 1400px
+     * Indicates screen size between 1200px  &lt; = &gt; 1400px
      */
     extraLarge,
     /**

@@ -5,7 +5,7 @@ import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Tag;
 
 /**
- * A Vaadin component for a <source> element.
+ * A Vaadin component for a &lt;source&gt; element.
  */
 @SuppressWarnings("unused")
 @Tag("source")
@@ -33,7 +33,7 @@ public class Source extends Component {
     }
 
     /**
-     * Attaches the component to its parent and sets up the <source> element.
+     * Attaches the component to its parent and sets up the  &lt;source&gt; element.
      */
 
     @Override
@@ -64,6 +64,7 @@ public class Source extends Component {
     }
 
     /**
+     * Sets the src
      * @param src - src attribute value
      */
     public void setSrc(String src) {
@@ -72,6 +73,7 @@ public class Source extends Component {
     }
 
     /**
+     * Sets the type
      * @param type - type attribute value
      */
     public void setType(String type) {

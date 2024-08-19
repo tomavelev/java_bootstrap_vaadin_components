@@ -12,4 +12,11 @@ import com.vaadin.flow.component.html.Div;
 @SuppressWarnings("unused")
 @StyleSheet("https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css")
 public class BootstrapRootDiv extends Div {
+
+    /**
+     * Creates new Div with Bootstrap CSS included
+     */
+    public BootstrapRootDiv(){
+
+    }
 }
