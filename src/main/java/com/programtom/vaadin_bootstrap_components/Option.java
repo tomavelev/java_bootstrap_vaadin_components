@@ -53,4 +53,14 @@ public class Option extends Component {
     public Option(String text, String value) {
         this(text, value, false);
     }
+
+
+    /**
+     * The value of the Option that is ideally hidden - not the same as the label displayed to the user.
+     *
+     * @return the option's (internal) value
+     */
+    public String getValue() {
+        return getElement().getAttribute("value");
+    }
 }

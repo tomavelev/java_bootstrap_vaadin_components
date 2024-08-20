@@ -119,4 +119,18 @@ public class FloatingInput extends Div {
     public void focus() {
         input.focus();
     }
+
+    /**
+     * Sets if the field is not type-able
+     *
+     * @param isReadonly - if the field is Read only
+     */
+    public void setReadonly(boolean isReadonly) {
+
+        if (isReadonly) {
+            input.getElement().setAttribute("readonly", "");
+        } else {
+            input.getElement().removeAttribute("readonly");
+        }
+    }
 }

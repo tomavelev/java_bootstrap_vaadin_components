@@ -56,6 +56,15 @@ public class FloatingTextArea extends Component implements HasComponents {
         return textArea.getValue();
     }
 
+    /***
+     * Sets the current value of the TextArea.
+     *
+     * @param value - the new Value
+     */
+    public void setValue(String value) {
+        textArea.setCustomValue(value);
+    }
+
     /**
      * Sets an error message for this form control.
      */
@@ -84,5 +93,19 @@ public class FloatingTextArea extends Component implements HasComponents {
         errorDiv.setClassName("invalid-feedback");
         errorDiv.getStyle().set("display", "block");
         add(errorDiv);
+    }
+
+    /**
+     * Sets if the field is not type-able
+     *
+     * @param isReadonly - if the field is Read only
+     */
+    public void setReadonly(boolean isReadonly) {
+
+        if (isReadonly) {
+            textArea.getElement().setAttribute("readonly", "");
+        } else {
+            textArea.getElement().removeAttribute("readonly");
+        }
     }
 }

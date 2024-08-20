@@ -27,7 +27,7 @@ public class TextArea extends Component implements HasComponents {
             getElement().setAttribute("id", id);
             getElement().setAttribute("placeholder", label);
         }
-        getElement().addEventListener("change", e ->
+        getElement().addEventListener("input", e ->
                 getElement().executeJs("return this.value").then(jsonValue ->
                         internalValue = jsonValue.asString()
                 )

@@ -46,4 +46,18 @@ public class FloatingSelect extends Component implements HasComponents {
     public int selectedIndex() {
         return this.select.selectedIndex();
     }
+
+    /**
+     * Sets if the field is not type-able
+     *
+     * @param isReadonly - if the field is Read only
+     */
+    public void setReadonly(boolean isReadonly) {
+
+        if (isReadonly) {
+            select.getElement().setAttribute("readonly", "");
+        } else {
+            select.getElement().removeAttribute("readonly");
+        }
+    }
 }

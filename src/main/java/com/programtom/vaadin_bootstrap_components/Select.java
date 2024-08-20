@@ -13,6 +13,7 @@ import java.util.List;
  *
  * @author Toma Velev
  */
+@SuppressWarnings("unused")
 @Tag("select")
 public class Select extends Component implements HasComponents {
 
@@ -20,6 +21,12 @@ public class Select extends Component implements HasComponents {
      * The selected index of the select element.
      */
     private int selectedIndex = 0;
+
+    /**
+     * The selected item's value.
+     */
+    private String selectedValue;
+
 
     /**
      * Initializes a new instance of Select with the given list, id, initial selected index and onChange callback.
@@ -37,11 +44,13 @@ public class Select extends Component implements HasComponents {
         }
         if (initialSelectedIndex != null) {
             this.selectedIndex = initialSelectedIndex;
+            this.selectedValue = list.get(initialSelectedIndex).getValue();
             getElement().executeJs("this.selectedIndex = $0", initialSelectedIndex);
         }
         getElement().addEventListener("change", (DomEventListener) event -> getElement().executeJs("return this.selectedIndex")
                 .then(jsonValue -> {
                     selectedIndex = Integer.parseInt(jsonValue.asString());
+                    selectedValue = list.get(selectedIndex).getValue();
                     if (onChange != null) {
                         onChange.accept(selectedIndex);
                     }
@@ -55,5 +64,14 @@ public class Select extends Component implements HasComponents {
      */
     public int selectedIndex() {
         return selectedIndex;
+    }
+
+    /**
+     * Returns the selected value of the select element.
+     *
+     * @return the value of the select element.
+     */
+    public String getSelectedValue() {
+        return selectedValue;
     }
 }
