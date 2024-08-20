@@ -50,7 +50,9 @@ public class Select extends Component implements HasComponents {
         getElement().addEventListener("change", (DomEventListener) event -> getElement().executeJs("return this.selectedIndex")
                 .then(jsonValue -> {
                     selectedIndex = Integer.parseInt(jsonValue.asString());
-                    selectedValue = list.get(selectedIndex).getValue();
+                    if (list.size() > selectedIndex) {
+                        selectedValue = list.get(selectedIndex).getValue();
+                    }
                     if (onChange != null) {
                         onChange.accept(selectedIndex);
                     }
