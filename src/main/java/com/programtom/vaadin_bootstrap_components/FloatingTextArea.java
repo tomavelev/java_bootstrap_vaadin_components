@@ -33,7 +33,7 @@ public class FloatingTextArea extends Component implements HasComponents {
         textArea.setClassName("form-control");
 
         add(textArea);
-        add(new Label(id, label));
+        add(new Label(label, id));
 
         setClassName("form-floating");
     }
