@@ -6,6 +6,7 @@ import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.dom.DomEventListener;
 import com.vaadin.flow.function.SerializableConsumer;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -23,9 +24,72 @@ public class Select extends Component implements HasComponents {
     private int selectedIndex = 0;
 
     /**
+     * The Options of the Select Element.
+     */
+    private final List<Option> list = new ArrayList<>();
+
+    /**
      * The selected item's value.
      */
     private String selectedValue;
+
+    /**
+     * Empty Constructor
+     */
+    public Select() {
+        this.setClassName("form-select");
+    }
+
+    /**
+     * Set Options and return the select for chaining other configuration.
+     */
+    public Select setOptions(List<Option> pList) {
+        removeAll();
+        list.clear();
+        list.addAll(pList);
+        list.forEach(this::add);
+        return this;
+    }
+
+    /**
+     * Set Element's ID
+     */
+    public Select setElementId(String id) {
+        if (id != null) {
+            getElement().setAttribute("id", id);
+        }
+        return this;
+    }
+
+    /**
+     * Sets Initially selected option
+     */
+    public Select setSelectedIndex(Integer initialSelectedIndex) {
+        if (initialSelectedIndex != null) {
+            this.selectedIndex = initialSelectedIndex;
+            if (list.size() > initialSelectedIndex) {
+                this.selectedValue = list.get(initialSelectedIndex).getValue();
+                getElement().executeJs("this.selectedIndex = $0", initialSelectedIndex);
+            }
+        }
+        return this;
+    }
+
+    /**
+     * Adds On Change Event Listener
+     */
+    public void addEventListener(SerializableConsumer<Integer> onChange) {
+        getElement().addEventListener("change", (DomEventListener) event -> getElement().executeJs("return this.selectedIndex")
+                .then(jsonValue -> {
+                    selectedIndex = Integer.parseInt(jsonValue.asString());
+                    if (list.size() > selectedIndex) {
+                        selectedValue = list.get(selectedIndex).getValue();
+                    }
+                    if (onChange != null) {
+                        onChange.accept(selectedIndex);
+                    }
+                }));
+    }
 
 
     /**
@@ -37,26 +101,11 @@ public class Select extends Component implements HasComponents {
      * @param onChange             a callback function that is called when the selection changes
      */
     public Select(List<Option> list, String id, Integer initialSelectedIndex, SerializableConsumer<Integer> onChange) {
-        this.setClassName("form-select");
-        list.forEach(this::add);
-        if (id != null) {
-            getElement().setAttribute("id", id);
-        }
-        if (initialSelectedIndex != null) {
-            this.selectedIndex = initialSelectedIndex;
-            this.selectedValue = list.get(initialSelectedIndex).getValue();
-            getElement().executeJs("this.selectedIndex = $0", initialSelectedIndex);
-        }
-        getElement().addEventListener("change", (DomEventListener) event -> getElement().executeJs("return this.selectedIndex")
-                .then(jsonValue -> {
-                    selectedIndex = Integer.parseInt(jsonValue.asString());
-                    if (list.size() > selectedIndex) {
-                        selectedValue = list.get(selectedIndex).getValue();
-                    }
-                    if (onChange != null) {
-                        onChange.accept(selectedIndex);
-                    }
-                }));
+        this();
+        setOptions(list)
+                .setElementId(id)
+                .setSelectedIndex(initialSelectedIndex)
+                .addEventListener(onChange);
     }
 
     /**

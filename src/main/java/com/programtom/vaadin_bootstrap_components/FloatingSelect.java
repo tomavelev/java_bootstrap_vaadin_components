@@ -21,6 +21,68 @@ public class FloatingSelect extends Component implements HasComponents {
      */
     private final Select select;
 
+
+    /**
+     * Constructor with only a label
+     */
+    public FloatingSelect(String label) {
+        this.setClassName("form-floating");
+        this.select = new Select();
+        select.setElementId(label);
+        this.select.getElement().setAttribute("aria-label", label);
+        add(this.select);
+        add(new Label(label, label));
+    }
+
+    /**
+     * Constructor with only a label and element id
+     */
+    public FloatingSelect(String label, String id) {
+        this.setClassName("form-floating");
+        this.select = new Select();
+        select.setElementId(id);
+        this.select.getElement().setAttribute("aria-label", label);
+        add(this.select);
+        add(new Label(label, id));
+    }
+
+    /**
+     * Set Options and return the select for chaining other configuration.
+     */
+    public FloatingSelect setOptions(List<Option> pList) {
+        select.setOptions(pList);
+        return this;
+    }
+
+    /**
+     */
+    public String getSelectedValue() {
+        return select.getSelectedValue();
+    }
+
+    /**
+     * Set Element's ID
+     */
+    public FloatingSelect setElementId(String id) {
+        select.setElementId(id);
+        return this;
+    }
+
+    /**
+     * Sets Initially selected option
+     */
+    public FloatingSelect setSelectedIndex(Integer initialSelectedIndex) {
+        select.setSelectedIndex(initialSelectedIndex);
+        return this;
+    }
+
+    /**
+     * Adds On Change Event Listener
+     */
+    public void addEventListener(SerializableConsumer<Integer> onChange) {
+        select.addEventListener(onChange);
+    }
+
     /**
      * Constructs a new FloatingSelect with the given list of options, label, ID, initial selected index, and change handler.
      *
@@ -32,7 +94,8 @@ public class FloatingSelect extends Component implements HasComponents {
      */
     public FloatingSelect(List<Option> list, String label, String id, Integer initialSelectedIndex, SerializableConsumer<Integer> onChange) {
         this.setClassName("form-floating");
-        this.select = new Select(list, id, initialSelectedIndex, onChange);
+        this.select = new Select();
+        select.setElementId(id).setOptions(list).setSelectedIndex(initialSelectedIndex).addEventListener(onChange);
         this.select.getElement().setAttribute("aria-label", label);
         add(this.select);
         add(new Label(label, id));
