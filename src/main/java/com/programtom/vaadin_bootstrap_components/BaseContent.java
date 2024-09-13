@@ -87,10 +87,18 @@ public abstract class BaseContent extends Component implements HasComponents {
         if (getSrc() != null) {
             getElement().setAttribute("src", getSrc());
         }
-        getElement().setAttribute("autoplay", isAutoplay() ? "1" : "0");
-        getElement().setAttribute("controls", Boolean.toString(isControls()));
-        getElement().setAttribute("loop", Boolean.toString(isLoop()));
-        getElement().setAttribute("muted", Boolean.toString(isMuted()));
+        if (isAutoplay()) {
+            getElement().setAttribute("autoplay", "1");
+        }
+        if (isControls()) {
+            getElement().setAttribute("controls", Boolean.toString(isControls()));
+        }
+        if (isLoop()) {
+            getElement().setAttribute("loop", Boolean.toString(isLoop()));
+        }
+        if (isMuted()) {
+            getElement().setAttribute("muted", Boolean.toString(isMuted()));
+        }
         getElement().setAttribute("preload", getPreload().name());
 
         if (getAriaLabel() != null) {
