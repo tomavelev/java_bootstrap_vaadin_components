@@ -126,7 +126,6 @@ public class FloatingInput extends Div {
      * @param isReadonly - if the field is Read only
      */
     public void setReadonly(boolean isReadonly) {
-
         if (isReadonly) {
             input.getElement().setAttribute("readonly", "");
         } else {

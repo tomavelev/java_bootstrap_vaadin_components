@@ -6,6 +6,8 @@ import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.dom.Element;
 
+import java.util.Random;
+
 /**
  * A custom UI component that represents a floating text area.
  *
@@ -19,6 +21,24 @@ public class FloatingTextArea extends Component implements HasComponents {
      * The underlying TextArea component.
      */
     private final TextArea textArea;
+
+
+    /**
+     * Constructs a new FloatingTextArea with the given label.
+     *
+     * @param label - Floating label for the text area
+     */
+    public FloatingTextArea(String label) {
+        String randomId = String.valueOf(new Random().nextLong());
+        textArea = new TextArea(randomId, label);
+        textArea.setCustomValue("");
+        textArea.setClassName("form-control");
+
+        add(textArea);
+        add(new Label(label, randomId));
+
+        setClassName("form-floating");
+    }
 
     /**
      * Constructs a new FloatingTextArea with the given label, ID, and initial value.
@@ -107,5 +127,23 @@ public class FloatingTextArea extends Component implements HasComponents {
         } else {
             textArea.getElement().removeAttribute("readonly");
         }
+    }
+
+
+    /**
+     * Requests focus on the input element
+     */
+    public void focus() {
+        Element element = textArea.getElement();
+        element.executeJs("setTimeout(function(){$0.focus()},0)", element);
+    }
+
+    /**
+     * Sets the width
+     *
+     * @param width - the width
+     */
+    public void setWidth(String width) {
+        getElement().getStyle().setWidth(width);
     }
 }
