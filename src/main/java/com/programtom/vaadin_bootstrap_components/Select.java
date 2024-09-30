@@ -91,7 +91,6 @@ public class Select extends Component implements HasComponents {
                 }));
     }
 
-
     /**
      * Initializes a new instance of Select with the given list, id, initial selected index and onChange callback.
      *

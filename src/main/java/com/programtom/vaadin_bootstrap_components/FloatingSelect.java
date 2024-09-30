@@ -55,6 +55,7 @@ public class FloatingSelect extends Component implements HasComponents {
     }
 
     /**
+     * Returns the Selected Item Value
      */
     public String getSelectedValue() {
         return select.getSelectedValue();
