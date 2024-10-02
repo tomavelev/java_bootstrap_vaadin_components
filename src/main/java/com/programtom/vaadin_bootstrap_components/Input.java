@@ -112,6 +112,11 @@ public class Input extends com.vaadin.flow.component.html.Input {
         }
     }
 
+    /**
+     * Sets the checked Attribute
+     *
+     * @param initialValue the new check value.
+     */
     public void setChecked(boolean initialValue) {
         if (initialValue) {
             getElement().setAttribute("checked", "");

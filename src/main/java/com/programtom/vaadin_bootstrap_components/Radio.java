@@ -12,6 +12,15 @@ import com.vaadin.flow.component.html.Div;
 public class Radio extends Div {
 
     /**
+     * The internal Input component that handles the radio's value and state.
+     */
+    private final Input input;
+    /**
+     * internal cache of the value
+     */
+    private boolean internalValue;
+
+    /**
      * Constricts new Radio with the provided parameters
      *
      * @param id           - element ID
@@ -20,10 +29,10 @@ public class Radio extends Div {
      * @param initialValue - if this is the radio selected
      */
     public Radio(String id, String text, String name, boolean initialValue) {
-
-        Input input = new Input(InputType.RADIO, id, "");
+        input = new Input(InputType.RADIO, id, "");
         input.setClassName("form-check-input");
-        input.setChecked(initialValue);
+        setValue(initialValue);
+        internalValue = initialValue;
         input.getElement().setAttribute("name", name);
 
         Label label = new Label(text, id);
@@ -31,5 +40,24 @@ public class Radio extends Div {
         add(input, label);
 
         setClassName("form-check");
+    }
+
+    /**
+     * sets a new Value
+     *
+     * @param value the value
+     */
+    public void setValue(boolean value) {
+        internalValue = value;
+        input.setChecked(value);
+    }
+
+    /**
+     * Returns the current value of the checkbox.
+     *
+     * @return true if the checkbox is checked, false otherwise
+     */
+    public boolean getValue() {
+        return internalValue;
     }
 }
