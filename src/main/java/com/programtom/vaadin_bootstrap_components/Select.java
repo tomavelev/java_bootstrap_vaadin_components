@@ -45,9 +45,18 @@ public class Select extends Component implements HasComponents {
      */
     public Select setOptions(List<Option> pList) {
         removeAll();
+        selectedValue = null;
         list.clear();
         list.addAll(pList);
-        list.forEach(this::add);
+        for (Option option : list) {
+            add(option);
+            if (option.isSelected()) {
+                selectedValue = option.getValue();
+            }
+        }
+        if (selectedValue == null && !list.isEmpty()) {
+            selectedValue = list.getFirst().getValue();
+        }
         return this;
     }
 

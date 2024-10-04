@@ -56,6 +56,15 @@ public class Option extends Component {
 
 
     /**
+     * Returns if the option is selected
+     *
+     * @return is Option is selected
+     */
+    public boolean isSelected() {
+        return getElement().getAttribute("selected") != null;
+    }
+
+    /**
      * The value of the Option that is ideally hidden - not the same as the label displayed to the user.
      *
      * @return the option's (internal) value
