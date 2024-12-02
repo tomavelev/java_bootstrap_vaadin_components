@@ -1,8 +1,6 @@
 package com.programtom.vaadin_bootstrap_components;
 
-import com.vaadin.flow.component.ClickEvent;
-import com.vaadin.flow.component.ComponentEventListener;
-import com.vaadin.flow.component.Tag;
+import com.vaadin.flow.component.*;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Anchor;
 
@@ -87,7 +85,16 @@ public class NavItem extends Anchor {
     public NavItem(String label, ComponentEventListener<ClickEvent<Button>> clickListener) {
         init(label, null, clickListener);
     }
-
+    /**
+     * Initializes a Nav Item with a label and click listener.
+     *
+     * @param component         the component that will be used for label of the nav item
+     * @param clickListener the component event listener for the nav item
+     */
+    public NavItem(Component component, ComponentEventListener<ClickEvent<Button>> clickListener) {
+        init("", null, clickListener);
+        add(component);
+    }
     /**
      * Initializes a Nav Item with a label, href, and click listener.
      *
