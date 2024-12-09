@@ -1,5 +1,6 @@
 package com.programtom.vaadin_bootstrap_components;
 
+import com.vaadin.flow.component.AttachEvent;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.HasComponents;
 import com.vaadin.flow.component.Tag;
@@ -32,6 +33,13 @@ public class FloatingSelect extends Component implements HasComponents {
         this.select.getElement().setAttribute("aria-label", label);
         add(this.select);
         add(new Label(label, label));
+    }
+
+    @Override
+    protected void onAttach(AttachEvent attachEvent) {
+        super.onAttach(attachEvent);
+        addEventListener(integer -> {
+        });
     }
 
     /**
@@ -109,6 +117,16 @@ public class FloatingSelect extends Component implements HasComponents {
      */
     public int selectedIndex() {
         return this.select.selectedIndex();
+    }
+
+    /**
+     * Sets the select - width
+     *
+     * @param width - thr width
+     */
+    public void setWidth(String width) {
+        getElement().getStyle().setWidth(width);
+        select.getElement().getStyle().setWidth(width);
     }
 
     /**
