@@ -49,6 +49,15 @@ public class FloatingInput extends Div {
     }
 
     /**
+     * Set the Input type property
+     *
+     * @param type - the type value
+     */
+    public void setType(InputType type) {
+        input.setType(type.getHTMLType());
+    }
+
+    /**
      * Set the autocomplete input property
      *
      * @param type - the autocomplete value
