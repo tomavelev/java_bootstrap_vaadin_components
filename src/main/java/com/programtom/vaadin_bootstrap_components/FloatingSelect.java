@@ -130,6 +130,23 @@ public class FloatingSelect extends Component implements HasComponents {
     }
 
     /**
+     * Sets the select - width
+     *
+     * @param height - thr height
+     */
+    public void setHeight(String height) {
+        getElement().getStyle().setHeight(height);
+        select.getElement().getStyle().setHeight(height);
+    }
+
+    /**
+     * @param multiSelect whether the user could select only one value or multiple at ance
+     */
+    public void setMultiSelect(boolean multiSelect) {
+        select.setMultiSelect(multiSelect);
+    }
+
+    /**
      * Sets if the field is not type-able
      *
      * @param isReadonly - if the field is Read only
@@ -141,5 +158,14 @@ public class FloatingSelect extends Component implements HasComponents {
         } else {
             select.getElement().removeAttribute("readonly");
         }
+    }
+
+    /**
+     * Returns the selected value(s) of the select element.
+     *
+     * @return the value of the select element.
+     */
+    public List<String> getSelectedValues() {
+        return select.getSelectedValues();
     }
 }
